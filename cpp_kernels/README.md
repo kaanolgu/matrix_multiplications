@@ -17,4 +17,4 @@ Example        | Description           | Key Concepts / Keywords
 [loop_reorder/]:loop_reorder/
 [plram_access/]:plram_access/
 [systolic_array/]:systolic_array/
-[large_mult/]:large_matrix_multiplication/
+[large_mult/]:large_matrix_mult/
