@@ -5,7 +5,7 @@ and also matrix multiplication examples from the Vitis Accel Library [ https://g
 ## Execution Times
 
 
->FPGA = Alveo U200<
+>FPGA = Alveo U200
 
   
 
