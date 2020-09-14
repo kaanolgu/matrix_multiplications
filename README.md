@@ -2,8 +2,9 @@
 Algortihm to Multiply two Large Matrix Size (>256x256) based on Vitis 2020.1 Examples
 and also matrix multiplication examples from the Vitis Accel Library [ https://github.com/Xilinx/Vitis_Accel_Examples ]
 
-> The platform used was cloud computing platform Nimbix
-> Vitis Acceleration Examples  & Large Matrix Multiplications are stored in the cpp_kernels folder
+The platform used was cloud computing platform Nimbix
+
+>Vitis Acceleration Examples  & Large Matrix Multiplications are stored in the cpp_kernels folder
 
 ## Execution Times
 
