@@ -1,4 +1,4 @@
-# MatMul_MultipleCU
+# Matrix Multiplications on Xilinx Alveo U200
 Algortihm to Multiply two Large Matrix Size (>256x256) based on Vitis 2020.1 Examples
 and also matrix multiplication examples from the Vitis Accel Library [ https://github.com/Xilinx/Vitis_Accel_Examples ] 
 
