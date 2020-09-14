@@ -1,7 +1,7 @@
-Overlap Host and Kernel (C)
+Large Matrix Multiplication (C)
 ======================
 
-This examples demonstrates techniques that allow user to overlap Host(CPU) and FPGA computation in an application. It will cover asynchronous operations and event object.
+This examples demonstrates techniques that allow user to multiply 128x128 matrix multiplications
 
 ***KEY CONCEPTS:*** OpenCL API, Synchronize Host and FPGA, Asynchronous Processing, Events, Asynchronous memcpy
 
