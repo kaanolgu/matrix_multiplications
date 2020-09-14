@@ -26,18 +26,21 @@ Once the environment has been configured, the application can be executed by
 
 ##  COMMANDS FOR CREATING XCLBIN FOR NIMBIX PLATFORM
 Once the environment has been configured, run the following commands : 
-```
+
 Hardware Execution :
+```
 cd "replace this with project/file/directory"
 make all BUILD_DIR=./build/ TARGET=hw DEVICE=xilinx_u200_xdma_201830_2
 ./execute ./build/large_mult.xclbin
-
-Software Emulation : 
+```
+Software Emulation :
+```
 cd "replace this with project/file/directory"
 make all BUILD_DIR=./build/ TARGET=sw_emu DEVICE=xilinx_u200_xdma_201830_2 ; export XCL_EMULATION_MODE=sw_emu ; emconfigutil --platform xilinx_u200_xdma_201830_2 --nd 1
 ./execute ./build/large_mult.xclbin
-
+```
 Hardware Emulation :
+```
 cd "replace this with project/file/directory"
 make all BUILD_DIR=./build/ TARGET=hw_emu DEVICE=xilinx_u200_xdma_201830_2 ; export XCL_EMULATION_MODE=hw_emu ; emconfigutil --platform xilinx_u200_xdma_201830_2 --nd 1
 ./execute ./build/large_mult.xclbin
