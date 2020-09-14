@@ -4,12 +4,9 @@ and also matrix multiplication examples from the Vitis Accel Library [ https://g
 
 ## Execution Times
 
-> Comparison between execution times
-> Number of Compute Units = Matrix Size/Chunk Size = (1024*1024)(128x1024)
 
 >FPGA = Alveo U200<
 
->Large sizes are not included because they result worse timings.
   
 
 
@@ -25,7 +22,7 @@ and also matrix multiplication examples from the Vitis Accel Library [ https://g
     <td>Wall-Clock Time</td>
     <td>Speedup</td>
     <td>Total on Chip Power</td>
-    <td>BRAM Utilization</td>
+
   </tr>
     <tr>
       <td>256&times;256</td>
@@ -34,8 +31,8 @@ and also matrix multiplication examples from the Vitis Accel Library [ https://g
       <td>FPGA</td>
       <td>140.997 ms</td>
       <td>0.831</td>
-      <td>x</td>
-      <td>x</td>
+      <td>14.105W</td>
+
   </tr>
   <tr>
       <td>1024&times;1024</td>
@@ -45,7 +42,7 @@ and also matrix multiplication examples from the Vitis Accel Library [ https://g
       <td>4,485 ms</td>
       <td>1.73</td>
       <td>14.107 W</td>
-      <td>14%</td>
+
   </tr>
     <tr>
       <td>4096&times;4096</td>
@@ -55,7 +52,8 @@ and also matrix multiplication examples from the Vitis Accel Library [ https://g
       <td> 241,208 ms</td>
       <td>7.65</td>
       <td>14.185 W</td>
-      <td>14%</td>  
+
   </tr>
 </table>
-
+## Power Consumptions
+Will be updated later
