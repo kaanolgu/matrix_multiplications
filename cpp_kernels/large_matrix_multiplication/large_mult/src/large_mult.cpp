@@ -35,10 +35,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /*
   See host code for additional details about this example
-
+  In order to examine other sizes than 1024x1024
+  Change "BUFFER_SIZE"  variable to modify matrix size
+  Note : it must match the set size on the host file
+  No need to change any other variables
+*/
   */
 
-#define BUFFER_SIZE 512
+#define BUFFER_SIZE 1*1024
 
  int sum =0;
  int size = BUFFER_SIZE;
@@ -47,11 +51,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 const unsigned int c_size = BUFFER_SIZE;
 
 extern "C" {
-void vadd(int *c, int *a, int *b) {
+void lmult(int *c, int *a, int *b) {
 
    int arrayA[BUFFER_SIZE];
+   int arrayC[BUFFER_SIZE];
    #pragma HLS array_partition variable=arrayA block 
-
+   #pragma HLS array_partition variable=arrayC block 
 
   readA:
     for (int j = 0; j < size; j++) {
@@ -61,22 +66,7 @@ void vadd(int *c, int *a, int *b) {
       arrayA[j] = a[j];
     }
 
-    // Read data from global memory and write into local buffer for in2
-
-  // FPGA implementation, local array is mostly implemented as BRAM Memory
-  // block.
-  // BRAM Memory Block contains two memory ports which allow two parallel access
-  // to memory. To utilized both ports of BRAM block, vector addition loop is
-  // unroll with factor of 2. It is equivalent to following code:
-  //  for (int j = 0 ; j < chunk_size ; j+= 2){
-  //    vout_buffer[j]   = v1_buffer[j] + v2_buffer[j];
-  //    vout_buffer[j+1] = v1_buffer[j+1] + v2_buffer[j+1];
-  //  }
-  // Which means two iterations of loop will be executed together and as a
-  // result
-  // it will double the performance.
-  // Auto-pipeline is going to apply pipeline to this loop
-    multiply_writeC:
+    multiply:
   for (int i = 0; i < size*size; i+=BUFFER_SIZE) {
     for (int j = 0; j < size; j++) {
       
@@ -86,11 +76,17 @@ void vadd(int *c, int *a, int *b) {
       sum += arrayA[j] * b[i+j];
     }
 
-    c[i/size]=sum;
+    arrayC[i/size]=sum;
     sum=0;
 
   }
-
+  writeC:
+    for (int j = 0; j < size; j++) {
+#pragma HLS LOOP_TRIPCOUNT min = c_size max = c_size
+#pragma HLS PIPELINE II=1
+#pragma HLS UNROLL FACTOR = 2
+      c[j] = arrayC[j];
+    }
   }         
   }
 
