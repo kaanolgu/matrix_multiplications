@@ -8,7 +8,8 @@ This examples demonstrates techniques that allow user to multiply large matrix m
 ***KEYWORDS:*** cl_event, cl::CommandQueue, CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE, enqueueMigrateMemObjects
 
 ##  DESIGN FILES
-Application code is located in the largemul_*size* directory.Each example has its own src files that store the application codes.
+Application code is located in the src directory.
+Examining different sizes rather than 1024x1024 is possible by modifying host.cpp & large_mult.cpp files according to the comments in the code
 Accelerator binary files will be compiled to the xclbin directory.
 The xclbin directory is required by the Makefile and its contents will be filled during compilation.
 A listing of all the files in this example is shown below
