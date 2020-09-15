@@ -3,9 +3,9 @@ Large Matrix Multiplication (C)
 
 This examples demonstrates techniques that allow user to multiply large matrix multiplications
 
-***KEY CONCEPTS:*** OpenCL API, Synchronize Host and FPGA, Asynchronous Processing, Events, Asynchronous memcpy
+***KEY CONCEPTS:*** HLS pragmasOpenCL API, Synchronize Host and FPGA, Asynchronous Processing, Events, Asynchronous memcpy
 
-***KEYWORDS:*** cl_event, cl::CommandQueue, CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE, enqueueMigrateMemObjects
+***KEYWORDS:*** cl_event, cl::CommandQueue, CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE, enqueueMigrateMemObjects,#pragma HLS pipeline,#pragma HLS unroll
 
 ##  DESIGN FILES
 * Application code is located in the src directory.
