@@ -34,6 +34,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 **********/
 
 /*
+https://github.com/kaanolgu/matrix_multiplications
   See host code for additional details about this example
   In order to examine other sizes than 1024x1024
   Change "BUFFER_SIZE"  variable to modify matrix size
