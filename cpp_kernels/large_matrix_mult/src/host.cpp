@@ -34,6 +34,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 **********/
 
 /*  Large Matrix Multiplication Host Code
+https://github.com/kaanolgu/matrix_multiplications
 **********************************************
 In order to examine other sizes different than 1024x1024
 Change "columns" and "rows" variables to modify matrix size
