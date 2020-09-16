@@ -33,6 +33,9 @@ THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 **********/
 
+/* For experimenting different sizes, change "rows" and "columns" variables to value you desire, and modify MAX_SIZE in kernel file accordingly
+
+*/
 // OpenCL utility layer include
 #include "xcl2.hpp"
 #include <algorithm>
