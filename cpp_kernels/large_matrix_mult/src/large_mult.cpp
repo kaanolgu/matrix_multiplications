@@ -41,12 +41,11 @@ https://github.com/kaanolgu/matrix_multiplications
   Note : it must match the set size on the host file
   No need to change any other variables
 */
-  */
+  
 
 #define BUFFER_SIZE 1*1024
 
- int sum =0;
- int size = BUFFER_SIZE;
+
 
 // TRIPCOUNT indentifier
 const unsigned int c_size = BUFFER_SIZE;
@@ -58,7 +57,8 @@ void lmult(int *c, int *a, int *b) {
    int arrayC[BUFFER_SIZE];
    #pragma HLS array_partition variable=arrayA block 
    #pragma HLS array_partition variable=arrayC block 
-
+   int sum =0;
+   int size = BUFFER_SIZE;
   readA:
     for (int j = 0; j < size; j++) {
 #pragma HLS LOOP_TRIPCOUNT min = c_size max = c_size
